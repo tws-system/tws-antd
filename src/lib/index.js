@@ -1,8 +1,6 @@
-import Example from './components/Example';
-import SecondExample from './components/SecondExample';
+import TWSMarkdownEditor from './components/tws-markdown-editor'
 
-export default Example;
 export {
-  SecondExample
+  TWSMarkdownEditor
 };
 
