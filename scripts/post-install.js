@@ -1,4 +1,4 @@
 const rimraf = require('rimraf')
-const path = requre('path')
+const path = require('path')
 
 console.log(__dirname)
