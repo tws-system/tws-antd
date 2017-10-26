@@ -1,4 +1,3 @@
-import ReactDOM from 'react-dom'
 import TwsMarkdownEditor from './components/tws-markdown-editor'
 import TwsProgressCard from './components/tws-progress-card'
 

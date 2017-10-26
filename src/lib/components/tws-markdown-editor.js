@@ -16,6 +16,20 @@ export default class TwsMarkdownEditor extends Component {
       Object.assign({}, message, {uuid: this.uuid}), '*'
     )
   }
+  shouldComponentUpdate(nextProps, nextState) {
+    if (nextProps.value !== this.props.value) {
+      this.sendMessageToEditorFrame({
+        type: 'value',
+        value: nextProps.value
+      })
+    }
+
+    if(nextState.height !== this.state.height) {
+      return true
+    }
+
+    return false
+  }
 
   handleMessage (message) {
     if (message.data.uuid !== this.uuid) {
@@ -30,6 +44,10 @@ export default class TwsMarkdownEditor extends Component {
       }
 
       case 'height': {
+        console.log(message)
+        if (this.state.height === message.data.value) {
+          return
+        }
         this.setState({height: message.data.value + 32})
         break
       }
@@ -45,7 +63,7 @@ export default class TwsMarkdownEditor extends Component {
     const {height} = this.state
     this.sendMessageToEditorFrame({
       type: 'init',
-      defaultValue: this.props.defaultValue,
+      value: this.props.value,
       options: Object.assign({preview, height})
     })
   }
@@ -53,13 +71,14 @@ export default class TwsMarkdownEditor extends Component {
   componentDidMount () {
     window.addEventListener('message', this.handleMessage.bind(this), false)
     this.editorMDFrame.onload = this.handleMDFrameLoad.bind(this)
-    this.uuid = parseInt(Math.random() * 10000)
+    this.uuid = parseInt(Math.random() * 10000, 10)
   }
 
   render () {
     return (
       <div className='tws-markdown-editor'>
-        <iframe title='markdown' ref={(ref) => { this.editorMDFrame = ref }} scrolling='no' src='./editor-md/examples/simple.html'
+        <iframe title='markdown' ref={(ref) => { this.editorMDFrame = ref }} scrolling='no'
+                src='./editor-md/examples/simple.html'
                 style={Object.assign({}, IFRAME_STYLE, {height: this.state.height})}/>
       </div>
     )
