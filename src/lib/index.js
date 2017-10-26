@@ -1,6 +1,8 @@
-import TWSMarkdownEditor from './components/tws-markdown-editor'
+import TwsMarkdownEditor from './components/tws-markdown-editor'
+import TwsProgressCard from './components/tws-progress-card'
 
 export {
-  TWSMarkdownEditor
+  TwsMarkdownEditor,
+  TwsProgressCard
 };
 

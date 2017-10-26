@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 const DEFAULT_HEIGHT = 600
 const IFRAME_STYLE = {width: '100%', overflow: 'hidden', border: 'none'}
 
-export default class TWSMarkdownEditor extends Component {
+export default class TwsMarkdownEditor extends Component {
   constructor (props) {
     super(props)
     this.state = {
