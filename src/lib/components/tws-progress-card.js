@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Card, Progress } from 'antd'
 import PropTypes from 'prop-types'
 
-export default class TwsProgressCard extends Component {
+class TwsProgressCard extends Component {
   render () {
     return (
       <div>
@@ -24,3 +24,5 @@ TwsProgressCard.propTypes = {
   percent: PropTypes.number.isRequired,
   onClick: PropTypes.func
 }
+
+export default TwsProgressCard
