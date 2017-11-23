@@ -1,5 +1,14 @@
 $gap: 8px;
 
+$white: #FFF;
+$black: #595959;
+$gray: #ececec;
+
+
+body {
+  background: $gray;
+}
+
 .margin-t-2{
   margin-top: 2*$gap;
 }

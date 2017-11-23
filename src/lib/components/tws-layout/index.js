@@ -3,13 +3,16 @@ import { Layout, Row, Col,Radio} from 'antd'
 import logo from '../../images/logo-white.png'
 import UserInfo from './user-info'
 import PropTypes from 'prop-types'
+import "../../../style/index.scss"
+import "../../../style/tws-layout.scss"
+
 const {Header, Content, Footer} = Layout
 
 class TwsLayout extends Component {
   render () {
     return (
       <Layout>
-        <Header className='App-header' style={{lineHeight: '36px'}}>
+        <div className='App-header' style={{lineHeight: '36px'}}>
           <Row>
             <Col span={6}>
               <img src={logo} className='App-logo' alt='logo' />
@@ -27,7 +30,7 @@ class TwsLayout extends Component {
               </div>
             </Col>
           </Row>
-        </Header>
+        </div>
         <Content style={{padding: '0 50px'}}>
           {this.props.twsBreadcrumb}
           <Layout style={{padding: '24px 0', background: '#fff'}}>
