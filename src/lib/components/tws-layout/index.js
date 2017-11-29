@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Layout, Row, Col,Radio} from 'antd'
-import logo from '../../images/logo-white.png'
 import UserInfo from './user-info'
 import PropTypes from 'prop-types'
 import "../../../style/index.css"
@@ -15,7 +14,7 @@ class TwsLayout extends Component {
         <div className='App-header' style={{lineHeight: '36px'}}>
           <Row>
             <Col span={6}>
-              <img src={logo} className='App-logo' alt='logo' />
+              <img src={this.props.logo} className='App-logo' alt='logo' />
             </Col>
             <Col span={11} />
             <Col span={3}>
