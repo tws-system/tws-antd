@@ -6,8 +6,7 @@ import "../../../style/index.css"
 
 class TwsSection extends Component {
   render () {
-
-    return (<Col className='gutter-row margin-b-3' span={9}>
+    return (
       <Row onClick={this.props.onClick}>
         <Col span={2}>
           <div className='section-header-footer section-style'>
@@ -25,7 +24,7 @@ class TwsSection extends Component {
           </div>
         </Col>
       </Row>
-    </Col>)
+    )
   }
 }
 
