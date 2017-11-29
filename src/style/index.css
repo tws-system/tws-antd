@@ -1,0 +1,21 @@
+/*// $gap: 8px;*/
+
+/*// $white: #FFF;*/
+/*// $black: #595959;*/
+/*// $gray: #ececec;*/
+
+body {
+    background: 8px;
+}
+
+.margin-t-2 {
+    margin-top: 16px;
+}
+
+.margin-t-3 {
+    margin-top: 24px;
+}
+
+.margin-b-3 {
+    margin-bottom: 24px;
+}

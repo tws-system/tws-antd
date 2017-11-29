@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {TwsProgressCard, TwsMarkdownEditor,TwsBelongTask,TwsLayout} from '../lib';
+import {TwsProgressCard, TwsMarkdownEditor,TwsBelongTask,TwsLayout,TwsSection} from '../lib';
 
 class App extends Component {
   render() {
@@ -11,6 +11,7 @@ class App extends Component {
         <TwsLayout userName='zhang三' lang='en' onChange={console.log}>
           {"vvvv"}
         </TwsLayout>
+        <TwsSection taskType="选修" topicTitle="topic" taskTitle="task" sectionDescription="description" color={"red"}/>
       </div>
     )
   }

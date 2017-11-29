@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import "../../../style/index.scss"
+
+import "../../../style/index.css"
 class TwsBelongTask extends Component {
   render () {
     return (

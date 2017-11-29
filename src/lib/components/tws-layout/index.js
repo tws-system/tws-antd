@@ -3,8 +3,8 @@ import { Layout, Row, Col,Radio} from 'antd'
 import logo from '../../images/logo-white.png'
 import UserInfo from './user-info'
 import PropTypes from 'prop-types'
-import "../../../style/index.scss"
-import "../../../style/tws-layout.scss"
+import "../../../style/index.css"
+import "../../../style/tws-layout.css"
 
 const {Header, Content, Footer} = Layout
 
