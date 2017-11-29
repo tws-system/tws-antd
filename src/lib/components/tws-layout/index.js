@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import "../../../style/index.css"
 import "../../../style/tws-layout.css"
 
-const {Header, Content, Footer} = Layout
+const {Content, Footer} = Layout
 
 class TwsLayout extends Component {
   render () {
