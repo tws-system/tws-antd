@@ -8,18 +8,18 @@ class EditStatusBox extends Component {
   render () {
     return (<div>
         <Col span={3}>
-          <Input addonBefore='分数' defaultValue={'0'} grade={this.props.grade} style={{width: 120}} disabled={this.props.disable}
+          <Input addonBefore='分数' defaultValue={'0'} value={this.props.grade} style={{width: 120}} disabled={this.props.disabled}
                  onChange={this.props.onChangeGrade}
                  onBlur={this.props.onBlur}
           />
         </Col>
         <Col span={3}>
-          {<Select style={{width: 120}} disabled={this.props.disable} status={this.props.status} defaultValue={'unfinish'}
+          {<Select style={{width: 120}} disabled={this.props.disabled} value={this.props.status} defaultValue={'未完成'}
                    onChange={this.props.onChangeStatus}>
-            <Option value='excellent'>优秀</Option>
-            <Option value='finish'>完成</Option>
-            <Option value='reviewing'>已提交</Option>
-            <Option value='unfinish'>未完成</Option>
+            <Option value='优秀'>优秀</Option>
+            <Option value='完成'>完成</Option>
+            <Option value='已完成'>已完成</Option>
+            <Option value='未完成'>未完成</Option>
           </Select>}
         </Col>
       </div>
@@ -29,7 +29,7 @@ class EditStatusBox extends Component {
 
 EditStatusBox.propTypes = {
   status:PropTypes.string,
-  disable: PropTypes.string.isRequired,
+  disabled: PropTypes.string.isRequired,
   onChangeGrade: PropTypes.func,
   onChangeStatus:PropTypes.func,
   onBlur:PropTypes.func
