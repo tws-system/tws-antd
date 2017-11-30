@@ -14,7 +14,7 @@ class EditStatusBox extends Component {
           />
         </Col>
         <Col span={3}>
-          {<Select style={{width: 120}} disabled={this.props.disable} value={this.props.status} defaultValue={'unfinish'}
+          {<Select style={{width: 120}} disabled={this.props.disable} status={this.props.status} defaultValue={'unfinish'}
                    onChange={this.props.onChangeStatus}>
             <Option value='excellent'>优秀</Option>
             <Option value='finish'>完成</Option>
