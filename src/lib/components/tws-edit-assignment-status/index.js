@@ -8,7 +8,7 @@ class EditStatusBox extends Component {
   render () {
     return (<div>
         <Col span={3}>
-          <Input addonBefore='分数' defaultValue={'0'} value={this.props.value} style={{width: 120}} disabled={this.props.disable}
+          <Input addonBefore='分数' defaultValue={'0'} grade={this.props.grade} style={{width: 120}} disabled={this.props.disable}
                  onChange={this.props.onChangeGrade}
                  onBlur={this.props.onBlur}
           />
