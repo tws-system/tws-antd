@@ -29,7 +29,7 @@ class EditStatusBox extends Component {
 
 EditStatusBox.propTypes = {
   status:PropTypes.string,
-  disabled: PropTypes.boolean,
+  disabled: PropTypes.bool,
   onChangeGrade: PropTypes.func,
   onChangeStatus:PropTypes.func,
   onBlur:PropTypes.func
