@@ -8,7 +8,9 @@ import '../../../style/tws-layout.css'
 const {Content, Footer} = Layout
 
 class TwsLayout extends Component {
+  
   render () {
+
     return (
       <Layout>
         <div className='App-header' style={{lineHeight: '36px'}}>
@@ -23,14 +25,14 @@ class TwsLayout extends Component {
                         userCenterHomeUrl={this.props.userCenterHomeUrl}
               />
             </Col>
-            <Col span={3}>
+            {/* <Col span={3}>
               <div style={{float: 'right', marginTop: '20px'}}>
                 <Radio.Group value={this.props.lang} onChange={this.props.onChange}>
                   <Radio.Button key='en' value='en'>English</Radio.Button>
                   <Radio.Button key='zh' value='zh'>中文</Radio.Button>
                 </Radio.Group>
               </div>
-            </Col>
+            </Col> */}
           </Row>
         </div>
         <Content style={{padding: '0 50px'}}>
@@ -49,15 +51,15 @@ class TwsLayout extends Component {
   }
 }
 
-TwsLayout.defaultProps = {
-  lang: 'en'
-}
+// TwsLayout.defaultProps = {
+//   lang: 'en'
+// }
 
 TwsLayout.propTypes = {
   userName: PropTypes.string.isRequired,
   logoutUrl: PropTypes.string.isRequired,
   userCenterHomeUrl: PropTypes.string.isRequired,
   twsBreadcrumb: PropTypes.any,
-  onChange: PropTypes.func
+  // onChange: PropTypes.func
 }
 export default TwsLayout

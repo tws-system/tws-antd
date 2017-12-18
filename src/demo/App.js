@@ -9,7 +9,7 @@ class App extends Component {
         <TwsMarkdownEditor value="aaa"></TwsMarkdownEditor>
         <TwsProgressCard title="aaa" percent={10} onClick={console.log} />
         <TwsBelongTask title="所属任务卡">aaaaaa</TwsBelongTask>
-        <TwsLayout userName='zhang三' lang='en' logo={logo} onChange={console.log}>
+        <TwsLayout userName='zhang三' lang='en' logo={logo} onChange={console.log} logoutUrl={'jjjfdsjk'} userCenterHomeUrl={'bbbbbbbb'}>
           {"vvvv"}
         </TwsLayout>
         <TwsSection taskType="选修" topicTitle="topic" taskTitle="task" sectionDescription="description" color={"red"}/>
