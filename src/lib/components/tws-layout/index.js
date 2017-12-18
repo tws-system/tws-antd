@@ -23,14 +23,14 @@ class TwsLayout extends Component {
                         userCenterHomeUrl={this.props.userCenterHomeUrl}
               />
             </Col>
-            {/* <Col span={3}>
-             <div style={{float: 'right', marginTop: '20px'}}>
-             <Radio.Group value={this.props.lang} onChange={this.props.onChange}>
-             <Radio.Button key='en' value='en'>English</Radio.Button>
-             <Radio.Button key='zh' value='zh'>中文</Radio.Button>
-             </Radio.Group>
-             </div>
-             </Col> */}
+            <Col span={3}>
+              <div style={{float: 'right', marginTop: '20px'}}>
+                <Radio.Group value={this.props.lang} onChange={this.props.onChange}>
+                  <Radio.Button key='en' value='en'>English</Radio.Button>
+                  <Radio.Button key='zh' value='zh'>中文</Radio.Button>
+                </Radio.Group>
+              </div>
+            </Col>
           </Row>
         </div>
         <Content style={{padding: '0 50px'}}>
