@@ -4,12 +4,12 @@ import { Icon, Menu, Dropdown, Button } from 'antd'
 const menu = (
   <Menu>
     <Menu.Item>
-      <a rel='noopener noreferrer' href='https://school.thoughtworks.cn/user-center/home/index.html'>
+      <a rel='noopener noreferrer' href={this.props.userCenterHomeUrl}>
         <Icon type='user' className='margin-r-1' />个人中心
       </a>
     </Menu.Item>
     <Menu.Item>
-      <a rel='noopener noreferrer' href='https://school.thoughtworks.cn/cas/logout'>
+      <a rel='noopener noreferrer' href={this.props.logoutUrl}>
         <Icon type='close' className='margin-r-1' />退出
       </a>
     </Menu.Item>
