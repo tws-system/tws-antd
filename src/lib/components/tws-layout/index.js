@@ -55,8 +55,8 @@ TwsLayout.defaultProps = {
 
 TwsLayout.propTypes = {
   userName: PropTypes.string.isRequired,
-  logoutUrl: PropTypes.string,
-  userCenterHomeUrl: PropTypes.string,
+  logoutUrl: PropTypes.string.isRequired,
+  userCenterHomeUrl: PropTypes.string.isRequired,
   twsBreadcrumb: PropTypes.any,
   onChange: PropTypes.func
 }
