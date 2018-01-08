@@ -1,6 +1,6 @@
 {
   "name": "tws-antd",
-  "version": "1.12.14",
+  "version": "1.12.15",
   "description": "tws-antd",
   "main": "build/index.js",
   "scripts": {
