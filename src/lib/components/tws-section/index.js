@@ -8,12 +8,12 @@ class TwsSection extends Component {
   render () {
     return (
       <Row onClick={this.props.onClick}>
-        <Col span={2}>
+        <Col span={4}>
           <div className='section-header-footer section-style'>
             {this.props.taskType}
           </div>
         </Col>
-        <Col span={18}>
+        <Col span={16}>
           <div className='section-style'>
             {this.props.topicTitle + ' / ' + this.props.taskTitle + ' / ' + this.props.sectionDescription}
           </div>
