@@ -9,6 +9,11 @@
     white-space: nowrap;
 }
 
+.section-style:hover {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .section-header-footer {
-    background-color:#ececec
+    background-color: #ececec
 }

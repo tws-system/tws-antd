@@ -14,7 +14,7 @@
       <textarea id="markdown-textarea" style="display:none;"></textarea>
     </div>
     <div id="test-editormd-view">
-      <textarea id="markdown-preview" style="display:none;" name="test-editormd-markdown-doc">###Hello world!</textarea>
+      <textarea id="markdown-preview" style="display:none;" name="test-editormd-markdown-doc"></textarea>
     </div>
   </div>
   <script src="js/jquery.min.js"></script>
@@ -53,7 +53,7 @@
           type: 'height',
           value: $('#test-editormd-view').height()
         })
-
+          $('#test-editormd-view').find('a').attr('target','_blank')
       } else {
         var testEditor = editormd('test-editormd', {
           width: '100%',
@@ -61,6 +61,7 @@
           syncScrolling: 'single',
           path: '../lib/',
           onchange: function () {
+              $('.editormd-preview').find('a').attr('target', '_blank')
             sendMessageToParent({
               type: 'markDown',
               value: this.getMarkdown()
@@ -75,7 +76,7 @@
     }
 
     function updateValue(data) {
-      console.log(data.value)
+
       testEditormdView = editormd.markdownToHTML("test-editormd-view", {
         markdown: data.value,//+ "\r\n" + $("#append-test").text(),
         htmlDecode: "style,script,iframe"
@@ -85,11 +86,12 @@
         type: 'height',
         value: $('#test-editormd-view').height()
       })
-
+        $('#test-editormd-view').find('a').attr('target','_blank')
     }
 
     $(function () {
       window.addEventListener('message', (message) => {
+        $('#test-editormd-view').html('')
         switch (message.data.type) {
           case 'init': {
             initMarkDown(message.data);
