@@ -9,17 +9,18 @@ class TwsSection extends Component {
     return (
       <Row onClick={this.props.onClick}>
         <Col span={4}>
-          <div className='section-header-footer section-style'>
+          <div className='section-header section-style'>
             {this.props.taskType}
           </div>
         </Col>
         <Col span={16}>
-          <div className='section-style'>
-            {this.props.topicTitle + ' / ' + this.props.taskTitle + ' / ' + this.props.sectionDescription}
+          <div className='section-style section-content'>
+	          <p>{this.props.topicTitle}</p>
+	          <p>{this.props.taskTitle + ' / ' + this.props.sectionDescription}</p>
           </div>
         </Col>
         <Col span={4}>
-          <div className='section-header-footer section-style'>
+          <div className='section-footer section-style'>
             <Icon type='star' style={{fontSize: 30, color: this.props.color}}/>
           </div>
         </Col>

@@ -1,19 +1,28 @@
 .section-style {
-    border: 1px solid #ececec;
-    height: 56px;
-    text-align: center;
-    line-height: 56px;
-    cursor: pointer;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+	border: 1px solid #ececec;
+	height: 80px;
+	text-align: center;
+	cursor: pointer;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .section-style:hover {
-    overflow: hidden;
-    text-overflow: ellipsis;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
-.section-header-footer {
-    background-color: #ececec
+.section-header {
+	background-color: #ececec;
+	padding-top: 32px;
+}
+
+.section-footer {
+	background-color: #ececec;
+	padding-top: 32px;
+}
+
+.section-content {
+	padding-top: 22px;
 }
