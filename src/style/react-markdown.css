@@ -16,7 +16,12 @@
     border-spacing: 0;
 }
 
-.markdown-init table thead, tr, td, th {
+.markdown-init table tr td {
+    border: 1px solid #dfe2e5;
+    padding: 6px 13px !important;
+}
+
+.markdown-init table tr th {
     border: 1px solid #dfe2e5;
     padding: 6px 13px !important;
 }
