@@ -6,7 +6,7 @@ import '../../../style/react-markdown.css'
 class TwsReactMarkdownPreview extends Component {
   render () {
     return (
-      <ReactMarkdown className="markdown-init" source={this.props.source}
+      <ReactMarkdown className="markdown-init" source={this.props.source} escapeHtml={false}
                      renderers={{code: CodeBlock}}/>
     )
   }

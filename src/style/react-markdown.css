@@ -50,3 +50,7 @@
     padding: .5em;
     background: #f8f8f8;
 }
+
+.react-markdown-editor {
+border: 1px solid #ccc;
+}

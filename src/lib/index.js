@@ -6,6 +6,7 @@ import TwsSection from './components/tws-section'
 import TwsShowAssignmentStatus from './components/tws-show-assignment-status'
 import TwsEditAssignmentStatus from './components/tws-edit-assignment-status'
 import TwsReactMarkdownPreview from './components/tws-react-markdown/preview'
+import TwsReactMarkdownEditor from './components/tws-react-markdown/editor'
 
 export {
   TwsMarkdownEditor,
@@ -15,5 +16,6 @@ export {
   TwsSection,
   TwsShowAssignmentStatus,
   TwsEditAssignmentStatus,
-  TwsReactMarkdownPreview
-};
+  TwsReactMarkdownPreview,
+  TwsReactMarkdownEditor
+}
