@@ -53,6 +53,11 @@ A component by [VaffelNinja](http://vaffel.ninja) / Espen Hovlandsdal
 `
 
 class App extends Component {
+
+  getValue (value) {
+    console.log(value, 'mmmmm')
+  }
+
   render () {
     return (
       <div>
@@ -67,7 +72,7 @@ class App extends Component {
                     color={'red'}/>
 
         <TwsReactMarkdownPreview source={initialSource}/>
-        <TwsReactMarkdownEditor value={initialSource}/>
+        <TwsReactMarkdownEditor value={initialSource} onChange={this.getValue.bind(this)}/>
       </div>
     )
   }
