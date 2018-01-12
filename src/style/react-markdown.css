@@ -7,7 +7,7 @@
 
 .markdown-init li {
     list-style: square;
-    margin-left: 8px;
+    margin-left: 32px;
 }
 
 .markdown-init table {
@@ -16,12 +16,7 @@
     border-spacing: 0;
 }
 
-.markdown-init table tr td {
-    border: 1px solid #dfe2e5;
-    padding: 6px 13px !important;
-}
-
-.markdown-init table tr th {
+.markdown-init table tr td, .markdown-init table tr th {
     border: 1px solid #dfe2e5;
     padding: 6px 13px !important;
 }
@@ -30,7 +25,7 @@
     max-width: 100%;
 }
 
-.markdown-init h1, h2, h3, h4, h5 {
+.markdown-init h1, .markdown-init h2, .markdown-init h3, .markdown-init h4, .markdown-init h5 {
     padding-left: 8px;
     font-weight: bold;
     line-height: 2.5em
