@@ -56,27 +56,16 @@
 }
 
 .editor-pane {
-    position: fixed;
-    top: 57px;
-    left: 0;
-    bottom: 0;
-    height: auto;
     overflow: auto;
     padding-right: 1px;
-}
-
-.editor textarea {
-    padding: 20px;
+    height: 225px;
 }
 
 .editor-pane textarea {
-    min-height: 500px;
+    min-height: 225px;
 }
 
-.result-pane > div {
-    position: fixed;
-    top: 57px;
-    right: 0;
-    bottom: 0;
-    overflow: auto;
+.result-pane {
+    height: 225px;
+    overflow: scroll;
 }

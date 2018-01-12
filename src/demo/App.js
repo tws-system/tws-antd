@@ -49,10 +49,6 @@ A component by [VaffelNinja](http://vaffel.ninja) / Espen Hovlandsdal
       <source id="mp4" src="https://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4">
       <p>抱歉，你的浏览器不支持在线视频播放。</p >
 </video>
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fK_zwl-lnmc" frameborder="0" allowfullscreen>
-</iframe>
     
 `
 
