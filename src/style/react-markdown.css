@@ -68,4 +68,5 @@
 .result-pane {
     height: 325px;
     overflow: scroll;
+    background-color: white;
 }
