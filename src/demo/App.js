@@ -5,6 +5,8 @@ import {
   TwsBelongTask,
   TwsLayout,
   TwsSection,
+    TwsShowAssignmentStatus,
+    TwsEditAssignmentStatus,
   TwsReactMarkdownPreview,
   TwsReactMarkdownEditor
 } from '../lib'
@@ -70,7 +72,7 @@ class App extends Component {
         </TwsLayout>
         <TwsSection taskType="选修" topicTitle="topicsfjddddfasjkkkkkkkkdddddddddddddddddddddddddddl" taskTitle="tnvjvj"
                     color={'red'}/>
-
+        <TwsEditAssignmentStatus status='已提交' disabled />
         <TwsReactMarkdownPreview source={initialSource}/>
         <TwsReactMarkdownEditor value={initialSource} onChange={this.getValue.bind(this)}/>
       </div>
