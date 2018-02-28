@@ -22,7 +22,10 @@ export default class MarkdownEditor extends React.Component {
   }
 
   render () {
-    return <div className="react-markdown-editor">
+      const videoTag = this.state.markdownSrc.includes('<video')
+      const isEscapeHtml = !videoTag
+
+      return <div className="react-markdown-editor">
       <Row>
         <Col span={12}>
           <div className="editor-pane">
@@ -31,7 +34,7 @@ export default class MarkdownEditor extends React.Component {
         </Col>
         <Col span={12}>
           <div className="result-pane">
-            <ReactMarkdown className="markdown-init" source={this.state.markdownSrc} escapeHtml={false}
+            <ReactMarkdown className="markdown-init" source={this.state.markdownSrc} escapeHtml={isEscapeHtml}
                            renderers={{code: CodeBlock}}/>
           </div>
         </Col>

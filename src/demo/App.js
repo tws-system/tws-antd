@@ -13,6 +13,7 @@ import {
 import logo from '../lib/images/logo-white.png'
 
 const initialSource = `
+<a>asd</a>
 # Live demo
 Changes are automatically rendered as you type.
 * Implements [GitHub Flavored Markdown](https://github.github.com/gfm/)
