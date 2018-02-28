@@ -22,7 +22,8 @@ export default class MarkdownEditor extends React.Component {
   }
 
   render () {
-      const videoTag = this.state.markdownSrc.includes('<video')
+      const markdownSrc = this.state.markdownSrc || ''
+      const videoTag = markdownSrc.includes('<video')
       const isEscapeHtml = !videoTag
 
       return <div className="react-markdown-editor">

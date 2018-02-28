@@ -5,7 +5,8 @@ import '../../../style/react-markdown.css'
 
 class TwsReactMarkdownPreview extends Component {
   render () {
-    const videoTag = this.props.source.includes('<video')
+    const markdownSrc = this.props.source || ''
+    const videoTag = markdownSrc.includes('<video')
     const isEscapeHtml = !videoTag
 
     return (
