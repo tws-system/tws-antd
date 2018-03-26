@@ -54,7 +54,16 @@
 .react-markdown-editor {
     border: 1px solid #ccc;
 }
-
+.react-markdown-tools{
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-top: none;
+}
+.react-markdown-icon{
+    font-size: 1.5rem;
+    color: #08c
+}
 .editor-pane {
     overflow: auto;
     padding-right: 1px;
