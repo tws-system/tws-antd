@@ -1,5 +1,5 @@
 import React from 'react'
-import {Input, Row, Col, Icon, Tooltip} from 'antd'
+import {Input, Row, Col, Icon} from 'antd'
 import ReactMarkdown from 'react-markdown'
 import CodeBlock from './code-block'
 import '../../../style/react-markdown.css'
