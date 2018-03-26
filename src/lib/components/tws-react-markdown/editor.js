@@ -27,16 +27,16 @@ export default class MarkdownEditor extends React.Component {
       const isEscapeHtml = !videoTag
 
       return <div >
-
+          <div className='react-markdown-tools'>
+              <Tooltip placement="topRight" title="查看 Markdown 使用">
+                  <a href='https://school.thoughtworks.cn/bbs/topic/1180/%E8%AE%AD%E7%BB%83%E8%90%A5%E7%B3%BB%E7%BB%9F-markdown-%E4%BD%BF%E7%94%A8' target='_blank'>
+                      <Icon className='react-markdown-icon' type="question-circle-o" />
+                  </a>
+              </Tooltip>
+          </div>
       <Row className="react-markdown-editor">
         <Col span={12}>
-            <div className='react-markdown-tools'>
-                <Tooltip placement="topRight" title="查看 Markdown 使用">
-                <a href='https://school.thoughtworks.cn/bbs/topic/1180/%E8%AE%AD%E7%BB%83%E8%90%A5%E7%B3%BB%E7%BB%9F-markdown-%E4%BD%BF%E7%94%A8' target='_blank'>
-                    <Icon className='react-markdown-icon' type="question-circle-o" />
-                </a>
-                </Tooltip>
-            </div>
+
           <div className="editor-pane">
             <TextArea defaultValue={this.state.markdownSrc} onChange={this.handleMarkdownChange}/>
           </div>
