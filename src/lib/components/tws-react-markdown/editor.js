@@ -17,6 +17,8 @@ export default class MarkdownEditor extends React.Component {
     }
 
     componentWillReceiveProps (nextProps) {
+        console.log(this.props.value)
+        console.log(nextProps.value)
         if(nextProps.value !== this.props.value) {
             this.setState({markdownSrc : nextProps.value})
         }
