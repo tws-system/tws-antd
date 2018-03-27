@@ -17,8 +17,6 @@ export default class MarkdownEditor extends React.Component {
     }
 
     componentWillReceiveProps (nextProps) {
-        console.log(this.props.value)
-        console.log(nextProps.value)
         if(nextProps.value !== this.props.value) {
             this.setState({markdownSrc : nextProps.value})
         }
@@ -32,7 +30,6 @@ export default class MarkdownEditor extends React.Component {
 
     render() {
         let markdownSrc = this.state.markdownSrc || ''
-        console.log(markdownSrc)
         const videoTag = markdownSrc.toString().includes('<video')
         const isEscapeHtml = !videoTag
 
@@ -51,7 +48,7 @@ export default class MarkdownEditor extends React.Component {
                 <Col span={12}>
 
                     <div className="editor-pane">
-                        <TextArea defaultValue={this.state.markdownSrc} onChange={this.handleMarkdownChange}/>
+                        <TextArea value={this.state.markdownSrc} onChange={this.handleMarkdownChange}/>
                     </div>
                 </Col>
                 <Col span={12}>
