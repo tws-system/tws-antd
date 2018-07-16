@@ -7,6 +7,13 @@ const MarkdownUpload = ({name, action, accept}) => {
         name: name || 'file',
         accept: accept || 'image/*',
         action,
+        beforeUpload(file){
+            const isLt2M = file.size / 1024 / 1024 < 2;
+            if (!isLt2M) {
+                message.error('Image must smaller than 2MB!');
+                return false
+            }
+        },
         onChange(info) {
             if (info.file.status === 'done') {
                 message.success(`${info.file.name} file uploaded successfully`);
@@ -15,6 +22,7 @@ const MarkdownUpload = ({name, action, accept}) => {
                 message.error(`${info.file.name} file upload failed.`);
             }
         },
+
     };
     return (
         <Upload {...props}>
