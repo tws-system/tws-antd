@@ -2,6 +2,8 @@ import React from 'react'
 import {Input, Row, Col, Icon} from 'antd'
 import ReactMarkdown from 'react-markdown'
 import CodeBlock from './code-block'
+import MarkdownGuide from './tools/markdown-guide'
+import MarkdownUpload from './tools/markdown-upload'
 import '../../../style/react-markdown.css'
 
 const {TextArea} = Input
@@ -16,9 +18,9 @@ export default class MarkdownEditor extends React.Component {
         }
     }
 
-    componentWillReceiveProps (nextProps) {
-        if(nextProps.value !== this.props.value) {
-            this.setState({markdownSrc : nextProps.value})
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.value !== this.props.value) {
+            this.setState({markdownSrc: nextProps.value})
         }
     }
 
@@ -34,19 +36,14 @@ export default class MarkdownEditor extends React.Component {
         const isEscapeHtml = !videoTag
 
         return <div>
-            <Row>
-                <Col span={24}>
-                    <div className='react-markdown-tools'>
-                        <a href='https://school.thoughtworks.cn/bbs/topic/1180/%E8%AE%AD%E7%BB%83%E8%90%A5%E7%B3%BB%E7%BB%9F-markdown-%E4%BD%BF%E7%94%A8'
-                           target='_blank'>
-                            <Icon className='react-markdown-icon' type="question-circle-o"/>
-                        </a>
-                    </div>
-                </Col>
+            <Row className='react-markdown-tools'>
+                <MarkdownGuide/>
+                <MarkdownUpload
+                    {...this.props}
+                    uploadImageSuccess = {this.props.uploadImageSuccess} />
             </Row>
             <Row className="react-markdown-editor">
                 <Col span={12}>
-
                     <div className="editor-pane">
                         <TextArea value={this.state.markdownSrc} onChange={this.handleMarkdownChange}/>
                     </div>
