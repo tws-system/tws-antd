@@ -29,6 +29,11 @@ export default class MarkdownEditor extends React.Component {
             this.props.onChange(this.state.markdownSrc)
         })
     }
+    uploadImageSuccess(imagePath){
+        const imageLabel = `\n[](${imagePath})`
+        const {markdownSrc} = this.state
+        this.setState({markdownSrc : markdownSrc + imageLabel})
+    }
 
     render() {
         let markdownSrc = this.state.markdownSrc || ''
@@ -40,7 +45,7 @@ export default class MarkdownEditor extends React.Component {
                 <MarkdownGuide/>
                 <MarkdownUpload
                     {...this.props}
-                    uploadImageSuccess = {this.props.uploadImageSuccess} />
+                    uploadImageSuccess = {this.uploadImageSuccess.bind(this)} />
             </Row>
             <Row className="react-markdown-editor">
                 <Col span={12}>
