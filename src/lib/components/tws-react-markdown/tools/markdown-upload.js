@@ -1,12 +1,12 @@
 import React from 'react'
-import {Upload, message, Icon} from 'antd';
+import {Upload, message, Icon, Tooltip} from 'antd';
 
 
 const MarkdownUpload = ({name, action, accept, uploadImageSuccess}) => {
     const props = {
         name: name || 'file',
         accept: accept || 'image/*',
-        action,
+        action: action || '../api/uploadImages/',
         beforeUpload(file){
             const isLt2M = file.size / 1024 / 1024 < 2;
             if (!isLt2M) {
@@ -17,7 +17,7 @@ const MarkdownUpload = ({name, action, accept, uploadImageSuccess}) => {
         onChange(info) {
             if (info.file.status === 'done') {
                 message.success(`${info.file.name} file uploaded successfully`);
-                uploadImageSuccess(info)
+                uploadImageSuccess(info.file.response)
             } else if (info.file.status === 'error') {
                 message.error(`${info.file.name} file upload failed.`);
             }
@@ -26,7 +26,9 @@ const MarkdownUpload = ({name, action, accept, uploadImageSuccess}) => {
     };
     return (
         <Upload {...props}>
+            <Tooltip title="上传图片">
             <Icon className='react-markdown-icon' type="picture"/>
+            </Tooltip>
         </Upload>
     )
 }

@@ -23,6 +23,8 @@
 
 .markdown-init img {
     max-width: 100%;
+    display: block;
+    margin: 5px auto;
 }
 
 .markdown-init h1, .markdown-init h2, .markdown-init h3, .markdown-init h4, .markdown-init h5 {

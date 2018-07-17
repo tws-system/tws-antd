@@ -1,5 +1,5 @@
 import React from 'react'
-import {Input, Row, Col, Icon} from 'antd'
+import {Col, Input, Row} from 'antd'
 import ReactMarkdown from 'react-markdown'
 import CodeBlock from './code-block'
 import MarkdownGuide from './tools/markdown-guide'
@@ -13,7 +13,7 @@ export default class MarkdownEditor extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            markdownSrc: this.props.value
+            markdownSrc: this.props.value || ''
         }
     }
 
@@ -28,7 +28,8 @@ export default class MarkdownEditor extends React.Component {
             this.props.onChange(this.state.markdownSrc)
         })
     }
-    uploadImageSuccess(imagePath){
+
+    uploadImageSuccess(imagePath) {
         const imageLabel = `\n![](${imagePath})`
         const {markdownSrc} = this.state
         this.handleMarkdownChange(markdownSrc + imageLabel)
@@ -41,15 +42,16 @@ export default class MarkdownEditor extends React.Component {
 
         return <div>
             <Row className='react-markdown-tools'>
-                <MarkdownGuide/>
-                <MarkdownUpload
-                    {...this.props}
-                    uploadImageSuccess = {this.uploadImageSuccess.bind(this)} />
+                    <MarkdownGuide/>
+                    <MarkdownUpload
+                        {...this.props}
+                        uploadImageSuccess={this.uploadImageSuccess.bind(this)}/>
             </Row>
             <Row className="react-markdown-editor">
                 <Col span={12}>
                     <div className="editor-pane">
-                        <TextArea value={this.state.markdownSrc} onChange={(e)=>this.handleMarkdownChange(e.target.value)}/>
+                        <TextArea value={this.state.markdownSrc}
+                                  onChange={(e) => this.handleMarkdownChange(e.target.value)}/>
                     </div>
                 </Col>
                 <Col span={12}>
