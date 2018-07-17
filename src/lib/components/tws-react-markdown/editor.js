@@ -12,7 +12,6 @@ export default class MarkdownEditor extends React.Component {
 
     constructor(props) {
         super(props)
-        this.handleMarkdownChange = this.handleMarkdownChange.bind(this)
         this.state = {
             markdownSrc: this.props.value
         }
@@ -24,15 +23,15 @@ export default class MarkdownEditor extends React.Component {
         }
     }
 
-    handleMarkdownChange(evt) {
-        this.setState({markdownSrc: evt.target.value}, () => {
+    handleMarkdownChange(markdownSrc) {
+        this.setState({markdownSrc}, () => {
             this.props.onChange(this.state.markdownSrc)
         })
     }
     uploadImageSuccess(imagePath){
-        const imageLabel = `\n[](${imagePath})`
+        const imageLabel = `\n![](${imagePath})`
         const {markdownSrc} = this.state
-        this.setState({markdownSrc : markdownSrc + imageLabel})
+        this.handleMarkdownChange(markdownSrc + imageLabel)
     }
 
     render() {
@@ -50,7 +49,7 @@ export default class MarkdownEditor extends React.Component {
             <Row className="react-markdown-editor">
                 <Col span={12}>
                     <div className="editor-pane">
-                        <TextArea value={this.state.markdownSrc} onChange={this.handleMarkdownChange}/>
+                        <TextArea value={this.state.markdownSrc} onChange={(e)=>this.handleMarkdownChange(e.target.value)}/>
                     </div>
                 </Col>
                 <Col span={12}>
