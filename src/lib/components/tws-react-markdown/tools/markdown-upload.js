@@ -6,7 +6,7 @@ const MarkdownUpload = ({name, action, accept, uploadImageSuccess}) => {
     const props = {
         name: name || 'file',
         accept: accept || 'image/*',
-        action: action || '../api/uploadImages/',
+        action: action || '../api/uploadImages',
         beforeUpload(file){
             const isLt2M = file.size / 1024 / 1024 < 2;
             if (!isLt2M) {
@@ -25,11 +25,12 @@ const MarkdownUpload = ({name, action, accept, uploadImageSuccess}) => {
 
     };
     return (
-        <Upload {...props}>
-            <Tooltip title="上传图片">
-            <Icon className='react-markdown-icon' type="picture"/>
-            </Tooltip>
-        </Upload>
+        <Tooltip title="上传图片">
+            <Upload {...props}>
+                <Icon className='react-markdown-icon' type="picture"/>
+            </Upload>
+        </Tooltip>
+
     )
 }
 
