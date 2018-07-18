@@ -43,9 +43,9 @@ export default class MarkdownEditor extends React.Component {
         return <div>
             <Row className='react-markdown-tools'>
                     <MarkdownGuide/>
-                    <MarkdownUpload
-                        {...this.props}
-                        uploadImageSuccess={this.uploadImageSuccess.bind(this)}/>
+                    {/*<MarkdownUpload*/}
+                        {/*{...this.props}*/}
+                        {/*uploadImageSuccess={this.uploadImageSuccess.bind(this)}/>*/}
             </Row>
             <Row className="react-markdown-editor">
                 <Col span={12}>
