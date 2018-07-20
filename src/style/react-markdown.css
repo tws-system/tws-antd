@@ -1,12 +1,11 @@
 .markdown-init {
     background: white;
-    padding: 8px 5px;
+    padding: 8px 20px;
     font-size: 13px;
     font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
 }
-
-.markdown-init li {
-    margin-left: 32px;
+.markdown-init li{
+    margin-left: 15px;
 }
 .markdown-init ol>li {
     list-style: decimal!important;
