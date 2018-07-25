@@ -10,6 +10,7 @@ const {Content, Footer} = Layout
 class TwsLayout extends Component {
   
   render () {
+    const currentYear = new Date().getFullYear()
 
     return (
       <Layout>
@@ -44,7 +45,7 @@ class TwsLayout extends Component {
           </Layout>
         </Content>
         <Footer style={{textAlign: 'center'}}>
-          ThoughtWorks School ©2017
+          ThoughtWorks School © {currentYear}
         </Footer>
       </Layout>
     )
