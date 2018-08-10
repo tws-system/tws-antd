@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Layout, Row, Col, Radio } from 'antd'
+import Notification from './notification'
 import UserInfo from './user-info'
 import PropTypes from 'prop-types'
 import '../../../style/index.css'
@@ -8,10 +9,9 @@ import '../../../style/tws-layout.css'
 const {Content, Footer} = Layout
 
 class TwsLayout extends Component {
-  
+
   render () {
     const currentYear = new Date().getFullYear()
-
     return (
       <Layout>
         <div className='App-header' style={{lineHeight: '36px'}}>
@@ -25,6 +25,12 @@ class TwsLayout extends Component {
                         logoutUrl={this.props.logoutUrl}
                         userCenterHomeUrl={this.props.userCenterHomeUrl}
               />
+            </Col>
+            <Col span={1} style={{marginTop:'17px',textAlign:'right'}}>
+                  <Notification
+                    moreUrl={this.props.moreUrl}
+                    notifications={this.props.notifications}
+                  />
             </Col>
             {/* <Col span={3}>
               <div style={{float: 'right', marginTop: '20px'}}>
@@ -60,7 +66,10 @@ TwsLayout.propTypes = {
   userName: PropTypes.string.isRequired,
   logoutUrl: PropTypes.string.isRequired,
   userCenterHomeUrl: PropTypes.string.isRequired,
+  notification: PropTypes.any,
   twsBreadcrumb: PropTypes.any,
+  moreUrl: PropTypes.string.isRequired,
+  messageUrl: PropTypes.string.isRequired,
   // onChange: PropTypes.func
 }
 export default TwsLayout

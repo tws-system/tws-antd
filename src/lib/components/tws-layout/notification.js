@@ -1,0 +1,70 @@
+import React, {Component} from 'react'
+import {Popover, Button, Icon, Menu, Dropdown, Badge} from 'antd'
+
+let messageStyle = {
+    borderBottom: "1px solid #e9e9e9",
+    marginTop: '5px'
+}
+let moreStyle = {
+    marginTop: '5px'
+}
+
+class TwsUserInfo extends Component {
+    state = {
+        clicked: false,
+        hovered: false,
+    };
+
+    hide = () => {
+        this.setState({
+            clicked: false,
+            hovered: false,
+        });
+    }
+
+    handleHoverChange = (visible) => {
+        this.setState({
+            hovered: visible,
+            clicked: false,
+        });
+    }
+
+    render() {
+        const notifications = this.props.notifications
+        const hoverContent = (
+            <div style={{width: '400px'}}>
+                {
+                    notifications.map(item =>
+                        <p style={messageStyle}>
+                            <a href={item.url}>
+                                <div>{item.message}</div>
+                                <div style={{textAlign: 'Right'}}>{item.createTime}</div>
+                            </a>
+                        </p>
+                    )
+                }
+                <p style={moreStyle}>
+                    <a href={this.props.moreUrl}>
+                        查看全部
+                    </a>
+                </p>
+            </div>
+        );
+        return (
+            <Popover
+                content={hoverContent}
+                title="最新消息"
+                trigger="hover"
+                placement="bottom"
+                visible={this.state.hovered}
+                onVisibleChange={this.handleHoverChange}
+                arrowPointAtCenter
+            >
+                <Badge count={3}>
+                    <Icon type="bell" style={{fontSize: '22px', color: '#FFFFFF'}}/>
+                </Badge>
+            </Popover>)
+    }
+}
+
+export default TwsUserInfo

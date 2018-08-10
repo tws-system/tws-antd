@@ -36,7 +36,7 @@
     line-height: 2.5em
 }
 
-.markdown-init div, p, li {
+.markdown-init div,.markdown-init p,.markdown-init li {
     line-height: 2.2em;
 }
 

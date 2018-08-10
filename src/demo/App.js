@@ -62,13 +62,16 @@ class App extends Component {
   }
 
   render () {
+    const notifications = [{createTime:'2018-08-09',message:"助教 马欢欢 关注了你 微信：MH12312 手机号：15802953789 QQ：863729374 赶快去联系他吧",url:"https://school.thoughtworks.cn/learn/program-center/subjectiveQuiz/index.html#/student/program/21/task/79/assignment/156/quiz/95"},
+                          {createTime:'2018-08-19',message:"助教 司鑫 关注了你 微信：MH12312 手机号：13802953789 QQ：263729374 赶快去联系他吧",url:"https://school.thoughtworks.cn/learn/program-center/student/index.html#/student/program/21/task/79"}]
     return (
       <div>
         <TwsMarkdownEditor value="aaa"></TwsMarkdownEditor>
         <TwsProgressCard title="aaa" percent={10} onClick={console.log}/>
         <TwsBelongTask title="所属任务卡">aaaaaa</TwsBelongTask>
         <TwsLayout userName='zhang三' lang='en' logo={logo} onChange={console.log} logoutUrl={'jjjfdsjk'}
-                   userCenterHomeUrl={'bbbbbbbb'}>
+                   userCenterHomeUrl={'bbbbbbbb'} notifications={notifications}
+                   moreUrl={'http://localhost:3000/'}>
           {'vvvv'}
         </TwsLayout>
         <TwsSection taskType="选修" topicTitle="topicsfjddddfasjkkkkkkkkdddddddddddddddddddddddddddl" taskTitle="tnvjvj"
