@@ -44,7 +44,7 @@ class TwsUserInfo extends Component {
             </div>): (
             <div style={{width: '400px'}}>
                 {
-                    notifications.map(item =>
+                    notifications.slice(0, 5).map(item =>
                         <p style={messageStyle}>
                             <a href={item.url}>
                                 <div>{item.message}</div>
