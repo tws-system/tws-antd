@@ -6,7 +6,7 @@ let messageStyle = {
     marginTop: '5px'
 }
 let moreStyle = {
-    marginTop: '5px'
+    marginTop: '10px'
 }
 
 class TwsUserInfo extends Component {
@@ -31,7 +31,17 @@ class TwsUserInfo extends Component {
 
     render() {
         const notifications = this.props.notifications
-        const hoverContent = (
+        const hoverContent = notifications.length === 0 ?
+            (<div style={{width: '400px'}}>
+                <p style={messageStyle}>
+                    <div>暂无最新消息</div>
+                </p>
+                <p style={moreStyle}>
+                    <a href={this.props.moreUrl}>
+                        查看全部
+                    </a>
+                </p>
+            </div>): (
             <div style={{width: '400px'}}>
                 {
                     notifications.map(item =>
@@ -60,7 +70,7 @@ class TwsUserInfo extends Component {
                 onVisibleChange={this.handleHoverChange}
                 arrowPointAtCenter
             >
-                <Badge count={3}>
+                <Badge count={notifications.length}>
                     <Icon type="bell" style={{fontSize: '22px', color: '#FFFFFF'}}/>
                 </Badge>
             </Popover>)
