@@ -30,6 +30,7 @@ class TwsLayout extends Component {
                   <Notification
                     moreUrl={this.props.moreUrl}
                     notifications={this.props.notifications}
+                    handleOnClick={this.props.handleOnClick}
                   />
             </Col>
             {/* <Col span={3}>

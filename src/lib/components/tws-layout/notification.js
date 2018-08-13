@@ -28,7 +28,9 @@ class TwsUserInfo extends Component {
             clicked: false,
         });
     }
-
+    handleOnClick = (notificationId) => {
+        this.props.handleOnClick(notificationId)
+    }
     render() {
         const notifications = this.props.notifications
         const hoverContent = notifications.length === 0 ?
@@ -46,7 +48,7 @@ class TwsUserInfo extends Component {
                 {
                     notifications.slice(0, 5).map(item =>
                         <p style={messageStyle}>
-                            <a href={item.url}>
+                            <a href={item.url} onClick={this.handleOnClick.bind(this, item.id)}>
                                 <div>{item.message}</div>
                                 <div style={{textAlign: 'Right'}}>{item.createTime}</div>
                             </a>

@@ -60,10 +60,13 @@ class App extends Component {
   getValue (value) {
     console.log(value, 'mmmmm')
   }
-
+    handleOnClick(notificationId){
+      console.log('notificationId',notificationId)
+    }
   render () {
-    const notifications = [{createTime:'2018-08-09',message:"助教 马欢欢 关注了你 微信：MH12312 手机号：15802953789 QQ：863729374 赶快去联系他吧",url:"https://school.thoughtworks.cn/learn/program-center/subjectiveQuiz/index.html#/student/program/21/task/79/assignment/156/quiz/95"},
-                          {createTime:'2018-08-19',message:"助教 司鑫 关注了你 微信：MH12312 手机号：13802953789 QQ：263729374 赶快去联系他吧",url:"https://school.thoughtworks.cn/learn/program-center/student/index.html#/student/program/21/task/79"}]
+    const notifications = [{id:1,createTime:'2018-08-09',message:"助教 马欢欢 关注了你 微信：MH12312 手机号：15802953789 QQ：863729374 赶快去联系他吧",url:"https://school.thoughtworks.cn/learn/program-center/subjectiveQuiz/index.html#/student/program/21/task/79/assignment/156/quiz/95"},
+                          {id:2,createTime:'2018-08-19',message:"助教 司鑫 关注了你 微信：MH12312 手机号：13802953789 QQ：263729374 赶快去联系他吧",url:"https://school.thoughtworks.cn/learn/program-center/student/index.html#/student/program/21/task/79"},
+                          {id:3,createTime:'2018-08-19',message:"助教 司鑫 关注了你 微信：MH12312 手机号：13802953789 QQ：263729374 赶快去联系他吧",url:"#"}]
     return (
       <div>
         <TwsMarkdownEditor value="aaa"></TwsMarkdownEditor>
@@ -71,7 +74,8 @@ class App extends Component {
         <TwsBelongTask title="所属任务卡">aaaaaa</TwsBelongTask>
         <TwsLayout userName='zhang三' lang='en' logo={logo} onChange={console.log} logoutUrl={'jjjfdsjk'}
                    userCenterHomeUrl={'bbbbbbbb'} notifications={notifications}
-                   moreUrl={'http://localhost:3000/'}>
+                   moreUrl={'http://localhost:3000/'}
+                   handleOnClick={this.handleOnClick.bind(this)}>
           {'vvvv'}
         </TwsLayout>
         <TwsSection taskType="选修" topicTitle="topicsfjddddfasjkkkkkkkkdddddddddddddddddddddddddddl" taskTitle="tnvjvj"
