@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Popover, Button, Icon, Menu, Dropdown, Badge} from 'antd'
+import {Badge, Icon, Popover} from 'antd'
 
 let messageStyle = {
     borderBottom: "1px solid #e9e9e9",
@@ -32,7 +32,7 @@ class TwsUserInfo extends Component {
         this.props.handleOnClick(notificationId)
     }
     render() {
-        const notifications = this.props.notifications
+        const notifications = this.props.notifications || []
         const hoverContent = notifications.length === 0 ?
             (<div style={{width: '400px'}}>
                 <p style={messageStyle}>
