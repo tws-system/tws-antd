@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Badge, Icon, Popover} from 'antd'
 
-class TwsUserInfo extends Component {
+class Notification extends Component {
     state = {
         clicked: false,
         hovered: false,
@@ -65,4 +65,4 @@ class TwsUserInfo extends Component {
     }
 }
 
-export default TwsUserInfo
+export default Notification
