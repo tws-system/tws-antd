@@ -66,7 +66,7 @@ class App extends Component {
   render () {
     const notifications = [{id:1,createTime:'2018-08-09',message:"助教 马欢欢 关注了你 微信：MH12312 手机号：15802953789 QQ：863729374 赶快去联系他吧",url:"https://school.thoughtworks.cn/learn/program-center/subjectiveQuiz/index.html#/student/program/21/task/79/assignment/156/quiz/95"},
                           {id:2,createTime:'2018-08-19',message:"助教 司鑫 关注了你 微信：MH12312 手机号：13802953789 QQ：263729374 赶快去联系他吧",url:"https://school.thoughtworks.cn/learn/program-center/student/index.html#/student/program/21/task/79"},
-                          {id:3,createTime:'2018-08-19',message:"助教 司鑫 关注了你 微信：MH12312 手机号：13802953789 QQ：263729374 赶快去联系他吧",url:"#"}]
+                          {id:3,createTime:'2018-08-19',message:"助教 司鑫 关注了你 微信：MH12312 手机号：13802953789 QQ：263729374 赶快去联系他吧",url:""}]
     return (
       <div>
         <TwsMarkdownEditor value="aaa"></TwsMarkdownEditor>
