@@ -31,11 +31,11 @@ class Notification extends Component {
         const moreUrl = this.props.moreUrl
         const hoverContent = (<div style={{width: '400px'}}>
                 {notifications.length === 0 ?
-                    <p className= 'messageStyle'>
+                    <p className= 'message-style'>
                         <div>暂无最新消息</div>
                     </p> :
                     notifications.slice(0, 5).map(item =>
-                        <p className='messageStyle'>
+                        <p className='message-style'>
                             <a href='javascript:void(0)' onClick={this.handleOnClick.bind(this, item)}>
                                 <div>{item.message}</div>
                                 <div style={{textAlign: 'Right'}}>{item.createTime}</div>
@@ -43,7 +43,7 @@ class Notification extends Component {
                         </p>
                     )
                 }
-                <p className='moreStyle'>
+                <p className='more-style'>
                     <a href={moreUrl}>
                         查看全部
                     </a>
