@@ -20,8 +20,10 @@ class Notification extends Component {
             clicked: false,
         });
     }
-    handleOnClick = (notificationId) => {
-        this.props.handleOnClick(notificationId)
+    handleOnClick = (item) => {
+        this.props.handleOnClick(item.id,()=>{
+             window.location.href = item.url
+        })
     }
 
     render() {
@@ -34,7 +36,7 @@ class Notification extends Component {
                     </p> :
                     notifications.slice(0, 5).map(item =>
                         <p className='messageStyle'>
-                            <a href={item.url ? item.url : moreUrl} onClick={this.handleOnClick.bind(this, item.id)}>
+                            <a href='javascript:void(0)' onClick={this.handleOnClick.bind(this, item)}>
                                 <div>{item.message}</div>
                                 <div style={{textAlign: 'Right'}}>{item.createTime}</div>
                             </a>
