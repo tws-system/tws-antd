@@ -1,5 +1,5 @@
-require('es6-promise').polyfill();
-require('isomorphic-fetch');
+require('es6-promise').polyfill()
+require('isomorphic-fetch')
 
 export const status = {
   loading: '_LOADING',
@@ -12,7 +12,7 @@ const failureActionCreator = (action, error) => ({ type: action.type + status.fa
 
 export const requestMiddleware = () => next => action => {
   if (action.request) {
-    next(Object.assign({}, action, { type: action.type + status.loading }));
+    next(Object.assign({}, action, { type: action.type + status.loading }))
     const { url, ...otherConfigs } = action.request
     return fetch(url, otherConfigs)
       .then(response => {
