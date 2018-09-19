@@ -77,7 +77,8 @@
 }
 
 .editor-pane textarea {
-    min-height: 325px;
+    min-height: 325px!important;
+    border: none;
 }
 
 .result-pane {

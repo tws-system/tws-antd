@@ -21,7 +21,7 @@ class TwsSection extends Component {
         </Col>
         <Col span={4}>
           <div className='section-footer section-style'>
-            <Icon type='star' style={{fontSize: 30, color: this.props.color}}/>
+            <Icon type='star' theme='filled' style={{fontSize: 30, color: this.props.color}}/>
           </div>
         </Col>
       </Row>

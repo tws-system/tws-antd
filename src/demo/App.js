@@ -5,7 +5,6 @@ import {
   TwsBelongTask,
   TwsLayout,
   TwsSection,
-    TwsShowAssignmentStatus,
     TwsEditAssignmentStatus,
   TwsReactMarkdownPreview,
   TwsReactMarkdownEditor

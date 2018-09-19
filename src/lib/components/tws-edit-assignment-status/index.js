@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { Input, Col, Select} from 'antd'
+import { Input, Col} from 'antd'
 import PropTypes from 'prop-types'
-const Option = Select.Option
 
 class EditStatusBox extends Component {
 
