@@ -30,7 +30,7 @@ describe('requestMiddleware', () => {
     await actionHandler(action).then(() => {
       expect(nextStub.calledTwice).toBe(true)
       expect(nextStub.getCall(1).args[0].type).toBe('action_SUCCESS')
-      nextStub.getCall(1).args[0].response.then(data => expect(data).toEqual(response))
+      expect(nextStub.getCall(1).args[0].response).toEqual(response)
     })
   })
 

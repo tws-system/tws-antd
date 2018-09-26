@@ -17,10 +17,12 @@ export const requestMiddleware = () => next => action => {
     return fetch(url, otherConfigs)
       .then(response => {
         if (response.status >= 400) {
-          return next(failureActionCreator(action, response))
+          return Promise.reject(response)
         }
-        return next(successActionCreator(action, response.json()))
-      }).catch(error => next(failureActionCreator(action, error)))
+        return response.json()
+      })
+      .then(responseBody => next(successActionCreator(action, responseBody)))
+      .catch(error => next(failureActionCreator(action, error)))
   }
   return next(action)
 }
