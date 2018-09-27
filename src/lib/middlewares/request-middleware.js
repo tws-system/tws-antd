@@ -10,19 +10,27 @@ export const status = {
 const successActionCreator = (action, response) => ({ type: action.type + status.success, response })
 const failureActionCreator = (action, error) => ({ type: action.type + status.failure, error })
 
-export const requestMiddleware = () => next => action => {
+const requestMiddleware = () => next => action => {
   if (action.request) {
     next(Object.assign({}, action, { type: action.type + status.loading }))
-    const { url, ...otherConfigs } = action.request
-    return fetch(url, otherConfigs)
+    const { url, callbackAction, fallbackAction, ...otherConfig } = action.request
+    return fetch(url, otherConfig)
       .then(response => {
         if (response.status >= 400) {
           return Promise.reject(response)
         }
         return response.json()
       })
-      .then(responseBody => next(successActionCreator(action, responseBody)))
-      .catch(error => next(failureActionCreator(action, error)))
+      .then(responseBody => {
+        callbackAction && next(callbackAction)
+        return next(successActionCreator(action, responseBody))
+      })
+      .catch(error => {
+        fallbackAction && next(fallbackAction)
+        return next(failureActionCreator(action, error))
+      })
   }
   return next(action)
 }
+
+export default requestMiddleware
