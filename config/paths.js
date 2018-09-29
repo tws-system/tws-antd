@@ -56,6 +56,6 @@ module.exports = {
   appIndexJs: resolveApp('src/demo/index.js'),
   appStyleCSS:resolveApp('src/style/index.css'),
   appLibIndexJs: resolveApp('src/lib/index.js'),
-  appStyleImg:resolveApp('src/lib/images/logo-white-old.png'),
+  appStyleImg:resolveApp('src/lib/images/tw-logo-white-new.png'),
   appLibSrc: resolveApp('src/lib'),
 };
