@@ -9,7 +9,7 @@ import {
   TwsReactMarkdownPreview,
   TwsReactMarkdownEditor
 } from '../lib'
-import logo from '../lib/images/tw-logo-white.png'
+import logo from '../lib/images/tw-logo-white-new.png'
 
 const initialSource = `
 <a>asd</a>
