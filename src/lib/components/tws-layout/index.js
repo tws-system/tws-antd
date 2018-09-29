@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Layout, Row, Col, Radio } from 'antd'
+import React, {Component} from 'react'
+import {Col, Layout, Row} from 'antd'
 import Notification from './notification'
 import UserInfo from './user-info'
 import PropTypes from 'prop-types'
@@ -52,7 +52,7 @@ class TwsLayout extends Component {
           </Layout>
         </Content>
         <Footer style={{textAlign: 'center'}}>
-          ThoughtWorks School © {currentYear}
+            ThoughtWorks Learning Platform © {currentYear}
         </Footer>
       </Layout>
     )
