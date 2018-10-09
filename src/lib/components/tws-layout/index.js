@@ -3,6 +3,7 @@ import {Col, Layout, Row} from 'antd'
 import Notification from './notification'
 import UserInfo from './user-info'
 import PropTypes from 'prop-types'
+import LanguageButtons from './language-buttons'
 import '../../../style/index.css'
 import '../../../style/tws-layout.css'
 
@@ -33,14 +34,11 @@ class TwsLayout extends Component {
                     handleOnClick={this.props.handleOnClick}
                   />
             </Col>
-            {/* <Col span={3}>
+            <Col span={3}>
               <div style={{float: 'right', marginTop: '20px'}}>
-                <Radio.Group value={this.props.lang} onChange={this.props.onChange}>
-                  <Radio.Button key='en' value='en'>English</Radio.Button>
-                  <Radio.Button key='zh' value='zh'>中文</Radio.Button>
-                </Radio.Group>
+                  {this.props.languageButtons}
               </div>
-            </Col> */}
+            </Col>
           </Row>
         </div>
         <Content style={{padding: '0 50px'}}>
@@ -59,9 +57,6 @@ class TwsLayout extends Component {
   }
 }
 
-// TwsLayout.defaultProps = {
-//   lang: 'en'
-// }
 
 TwsLayout.propTypes = {
   userName: PropTypes.string.isRequired,

@@ -75,7 +75,7 @@ class App extends Component {
                    userCenterHomeUrl={'bbbbbbbb'} notifications={notifications}
                    moreUrl={'http://localhost:3000/'}
                    handleOnClick={this.handleOnClick.bind(this)}>
-          {'vvvv'}
+          {'测试'}
         </TwsLayout>
         <TwsSection taskType="选修" topicTitle="topicsfjddddfasjkkkkkkkkdddddddddddddddddddddddddddl" taskTitle="tnvjvj"
                     color={'red'}/>
