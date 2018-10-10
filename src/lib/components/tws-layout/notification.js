@@ -27,8 +27,8 @@ class Notification extends Component {
     }
 
     render() {
-        const notifications = this.props.notifications || []
-        const moreUrl = this.props.moreUrl
+        const {notifications=[], moreUrl, lang='zh'} = this.props
+
         const hoverContent = (<div style={{width: '400px'}}>
                 {notifications.length === 0 ?
                     <p className= 'message-style'>
@@ -37,7 +37,7 @@ class Notification extends Component {
                     notifications.slice(0, 5).map(item =>
                         <p className='message-style'>
                             <a href='javascript:void(0)' onClick={this.handleOnClick.bind(this, item)}>
-                                <div>{item.message}</div>
+                                <div>{item[`message_${lang}`] || item.message}</div>
                                 <div style={{textAlign: 'Right'}}>{item.createTime}</div>
                             </a>
                         </p>

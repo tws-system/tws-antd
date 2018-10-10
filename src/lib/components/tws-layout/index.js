@@ -30,6 +30,7 @@ class TwsLayout extends Component {
             <Col span={1} style={{marginTop:'17px',textAlign:'right'}}>
                   <Notification
                     moreUrl={this.props.moreUrl}
+                    lang={this.props.lang}
                     notifications={this.props.notifications}
                     handleOnClick={this.props.handleOnClick}
                   />
