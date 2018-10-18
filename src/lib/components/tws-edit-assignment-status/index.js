@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
 import { Input, Col} from 'antd'
 import PropTypes from 'prop-types'
+import {convertContent} from '../../contants/lang-util'
 
 class EditStatusBox extends Component {
 
   render () {
     return (<div>
         <Col span={3}>
-          <Input addonBefore='分数' defaultValue={'0'} value={this.props.grade} style={{width: 120}} disabled={this.props.disabled}
+          <Input addonBefore={convertContent('分数' )} defaultValue={'0'} value={this.props.grade} style={{width: 120}} disabled={this.props.disabled}
                  onChange={this.props.onChangeGrade}
                  onBlur={this.props.onBlur}
           />
         </Col>
         <Col span={3}>
-            <p style={{width: 120}}>状态：{this.props.status} </p>
+            <p style={{width: 120}}>{convertContent('状态' )}：{this.props.status} </p>
         </Col>
       </div>
     )

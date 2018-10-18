@@ -3,7 +3,6 @@ import {Col, Layout, Row} from 'antd'
 import Notification from './notification'
 import UserInfo from './user-info'
 import PropTypes from 'prop-types'
-import LanguageButtons from './language-buttons'
 import '../../../style/index.css'
 import '../../../style/tws-layout.css'
 

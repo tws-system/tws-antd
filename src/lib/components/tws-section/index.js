@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Col,Row,Icon} from 'antd'
+import {Col, Row, Icon, Tooltip} from 'antd'
 import PropTypes from 'prop-types'
 import "../../../style/section.css"
 import "../../../style/index.css"
@@ -8,10 +8,12 @@ class TwsSection extends Component {
   render () {
     return (
       <Row onClick={this.props.onClick}>
-        <Col span={4}>
-          <div className='section-header section-style'>
-            {this.props.taskType}
-          </div>
+        <Col span={6}>
+            <Tooltip  title={this.props.taskType}>
+              <div className='section-header section-style'>
+                {this.props.taskType}
+              </div>
+            </Tooltip>
         </Col>
         <Col span={16}>
           <div className='section-style section-content'>
@@ -19,7 +21,7 @@ class TwsSection extends Component {
 	          <p>{this.props.taskTitle + ' / ' + this.props.sectionDescription}</p>
           </div>
         </Col>
-        <Col span={4}>
+        <Col span={2}>
           <div className='section-footer section-style'>
             <Icon type='star' theme='filled' style={{fontSize: 30, color: this.props.color}}/>
           </div>

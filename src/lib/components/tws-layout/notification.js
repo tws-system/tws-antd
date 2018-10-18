@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Badge, Icon, Popover} from 'antd'
+import {convertContent} from '../../contants/lang-util'
 
 class Notification extends Component {
     state = {
@@ -32,7 +33,7 @@ class Notification extends Component {
         const hoverContent = (<div style={{width: '400px'}}>
                 {notifications.length === 0 ?
                     <p className= 'message-style'>
-                        <div>暂无最新消息</div>
+                        <div>{convertContent('暂无最新消息')}</div>
                     </p> :
                     notifications.slice(0, 5).map(item =>
                         <p className='message-style'>
@@ -45,7 +46,7 @@ class Notification extends Component {
                 }
                 <p className='more-style'>
                     <a href={moreUrl}>
-                        查看全部
+                        {convertContent('查看全部')}
                     </a>
                 </p>
             </div>
@@ -53,7 +54,7 @@ class Notification extends Component {
         return (
             <Popover
                 content={hoverContent}
-                title="最新消息"
+                title={convertContent("最新消息")}
                 trigger="hover"
                 placement="bottom"
                 visible={this.state.hovered}

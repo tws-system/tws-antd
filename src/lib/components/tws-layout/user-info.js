@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Icon, Menu, Dropdown, Button } from 'antd'
+import {convertContent} from '../../contants/lang-util'
 
 class TwsUserInfo extends Component {
 
@@ -8,12 +9,12 @@ class TwsUserInfo extends Component {
       <Menu>
         <Menu.Item>
           <a rel='noopener noreferrer' href={this.props.userCenterHomeUrl}>
-            <Icon type='user' className='margin-r-1' />个人中心
+            <Icon type='user' className='margin-r-1' />{convertContent('个人中心')}
           </a>
         </Menu.Item>
         <Menu.Item>
           <a rel='noopener noreferrer' href={this.props.logoutUrl}>
-            <Icon type='close' className='margin-r-1' />退出
+            <Icon type='close' className='margin-r-1' />{convertContent('退出')}
           </a>
         </Menu.Item>
       </Menu>
