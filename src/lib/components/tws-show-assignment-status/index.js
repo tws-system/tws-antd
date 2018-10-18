@@ -6,10 +6,10 @@ class ShowStatusBox extends Component {
   render () {
     return (<div>
 
-        <Col span={3}>
+        <Col span={12}>
             {convertContent('分数')}：{this.props.grade}
         </Col>
-        <Col span={3}>
+        <Col span={12}>
             {convertContent('状态')}：{this.props.status}
         </Col>
       </div>

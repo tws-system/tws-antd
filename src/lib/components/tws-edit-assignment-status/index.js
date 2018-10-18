@@ -7,14 +7,14 @@ class EditStatusBox extends Component {
 
   render () {
     return (<div>
-        <Col span={3}>
+        <Col span={12}>
           <Input addonBefore={convertContent('分数' )} defaultValue={'0'} value={this.props.grade} style={{width: 120}} disabled={this.props.disabled}
                  onChange={this.props.onChangeGrade}
                  onBlur={this.props.onBlur}
           />
         </Col>
-        <Col span={3}>
-            <p style={{width: 120}}>{convertContent('状态' )}：{this.props.status} </p>
+        <Col span={12}>
+            <p>{convertContent('状态' )}：{this.props.status} </p>
         </Col>
       </div>
     )
