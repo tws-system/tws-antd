@@ -5,11 +5,11 @@ import {Icon, message, Upload} from 'antd';
 const MarkdownFileUpload = ({name, action,  uploadFileSuccess}) => {
     const props = {
         name: name || 'file',
-        action: action || '../api/uploadFile/',
+        action: action || '../api/uploadImages/',
         beforeUpload(file){
             const isLt5M = file.size / 1024 / 1024 > 5;
             if (isLt5M) {
-                message.error('Image must smaller than 5MB!');
+                message.error('file must smaller than 5MB!');
                 return false
             }
         },
