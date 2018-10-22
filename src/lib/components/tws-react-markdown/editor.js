@@ -3,7 +3,8 @@ import {Col, Input, Row} from 'antd'
 import ReactMarkdown from 'react-markdown'
 import CodeBlock from './code-block'
 import MarkdownGuide from './tools/markdown-guide'
-import MarkdownUpload from './tools/markdown-upload'
+import MarkdownImageUpload from './tools/markdown-image-upload'
+import MarkdownFileUpload from './tools/markdown-file-upload'
 import '../../../style/react-markdown.css'
 
 const {TextArea} = Input
@@ -35,17 +36,31 @@ export default class MarkdownEditor extends React.Component {
         this.handleMarkdownChange(markdownSrc + imageLabel)
     }
 
+    uploadFileSuccess(filePath) {
+        const fileLabel = `[](${filePath})`
+        const {markdownSrc} = this.state
+        this.handleMarkdownChange(markdownSrc + fileLabel)
+    }
     render() {
         let markdownSrc = this.state.markdownSrc || ''
         const videoTag = markdownSrc.toString().includes('<video')
         const isEscapeHtml = !videoTag
 
         return <div>
-            <Row className='react-markdown-tools'>
+            <Row className='react-markdown-toolbar'>
+                <Col className='react-markdown-toolbar__tool'>
                     <MarkdownGuide/>
-                    <MarkdownUpload
+                </Col>
+                <Col className='react-markdown-toolbar__tool'>
+                    <MarkdownImageUpload
                         {...this.props}
                         uploadImageSuccess={this.uploadImageSuccess.bind(this)}/>
+                </Col>
+                <Col className='react-markdown-toolbar__tool'>
+                    <MarkdownFileUpload
+                    {...this.props}
+                    uploadFileSuccess={this.uploadFileSuccess.bind(this)}/>
+                </Col>
             </Row>
             <Row className="react-markdown-editor">
                 <Col span={12}>

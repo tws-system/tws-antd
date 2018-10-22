@@ -59,10 +59,14 @@
 .react-markdown-editor {
     border: 1px solid #ccc;
 }
-.react-markdown-tools{
-    padding: 5px;
+.react-markdown-toolbar{
+    padding: 5px 0;
     border: 1px solid #ccc;
     border-bottom: none;
+}
+.react-markdown-toolbar__tool{
+    margin-left: 15px;
+    float: left;
 }
 .react-markdown-icon{
     cursor: pointer;

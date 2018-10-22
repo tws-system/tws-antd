@@ -1,8 +1,8 @@
 import React from 'react'
-import {Upload, message, Icon, Tooltip} from 'antd';
+import {Icon, message, Upload} from 'antd';
 
 
-const MarkdownUpload = ({name, action, accept, uploadImageSuccess}) => {
+const MarkdownImageUpload = ({name, action, accept, uploadImageSuccess}) => {
     const props = {
         name: name || 'file',
         accept: accept || 'image/*',
@@ -25,13 +25,10 @@ const MarkdownUpload = ({name, action, accept, uploadImageSuccess}) => {
 
     };
     return (
-        <Tooltip title="上传图片">
         <Upload {...props}>
             <Icon className='react-markdown-icon' type="picture"/>
         </Upload>
-        </Tooltip>
-
     )
 }
 
-export default MarkdownUpload
+export default MarkdownImageUpload

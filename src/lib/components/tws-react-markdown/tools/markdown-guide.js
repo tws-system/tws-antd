@@ -6,7 +6,7 @@ const MarkdownGuide = () => {
     return (
         <a href='https://shimo.im/docs/pTYLxwLGfkon8E5Z/'
            target='_blank'>
-            <Tooltip title="markdown 使用指南">
+            <Tooltip title="markdown guide">
                 <Icon className='react-markdown-icon' type="question-circle-o"/>
             </Tooltip>
         </a>
