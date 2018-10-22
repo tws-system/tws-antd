@@ -36,8 +36,9 @@ export default class MarkdownEditor extends React.Component {
         this.handleMarkdownChange(markdownSrc + imageLabel)
     }
 
-    uploadFileSuccess(filePath) {
-        const fileLabel = `[](${filePath})`
+    uploadFileSuccess(fileInfo) {
+        const {name, response} = fileInfo
+        const fileLabel = `[${name}](${response})`
         const {markdownSrc} = this.state
         this.handleMarkdownChange(markdownSrc + fileLabel)
     }
