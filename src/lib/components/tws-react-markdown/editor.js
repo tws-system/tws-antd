@@ -30,18 +30,31 @@ export default class MarkdownEditor extends React.Component {
         })
     }
 
+    getCursorPosition() {
+        let element = window.document.getElementById("markdown-textArea")
+        if (!element) {
+            return
+        }
+        return element.selectionStart;
+    }
+
+    handleFileUploadSuccess(fileLabel) {
+        const {markdownSrc} = this.state
+        const currentCursorPosition = this.getCursorPosition()
+        const uploadedMarkdownSrc = markdownSrc.substring(0, currentCursorPosition) +fileLabel+ markdownSrc.substring(currentCursorPosition)
+        this.handleMarkdownChange(uploadedMarkdownSrc)
+    }
     uploadImageSuccess(imagePath) {
         const imageLabel = `\n![](${imagePath})`
-        const {markdownSrc} = this.state
-        this.handleMarkdownChange(markdownSrc + imageLabel)
+        this.handleFileUploadSuccess(imageLabel)
     }
 
     uploadFileSuccess(fileInfo) {
         const {name, response} = fileInfo
         const fileLabel = `[${name}](${response})`
-        const {markdownSrc} = this.state
-        this.handleMarkdownChange(markdownSrc + fileLabel)
+        this.handleFileUploadSuccess(fileLabel)
     }
+
     render() {
         let markdownSrc = this.state.markdownSrc || ''
         const videoTag = markdownSrc.toString().includes('<video')
@@ -59,14 +72,14 @@ export default class MarkdownEditor extends React.Component {
                 </Col>
                 <Col className='react-markdown-toolbar__tool'>
                     <MarkdownFileUpload
-                    {...this.props}
-                    uploadFileSuccess={this.uploadFileSuccess.bind(this)}/>
+                        {...this.props}
+                        uploadFileSuccess={this.uploadFileSuccess.bind(this)}/>
                 </Col>
             </Row>
             <Row className="react-markdown-editor">
                 <Col span={12}>
                     <div className="editor-pane">
-                        <TextArea value={this.state.markdownSrc}
+                        <TextArea id='markdown-textArea' value={this.state.markdownSrc}
                                   onChange={(e) => this.handleMarkdownChange(e.target.value)}/>
                     </div>
                 </Col>
