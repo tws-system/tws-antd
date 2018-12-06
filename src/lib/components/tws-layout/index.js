@@ -17,7 +17,9 @@ class TwsLayout extends Component {
         <div className='App-header' style={{lineHeight: '36px'}}>
           <Row>
             <Col span={6}>
-              <img src={this.props.logo} className='App-logo' alt='logo'/>
+                <a href="https://school.thoughtworks.cn/learn/home/index.html#/app-center">
+                    <img src={this.props.logo} className='App-logo' alt='logo'/>
+                </a>
             </Col>
             <Col span={11}/>
             <Col span={3}>
