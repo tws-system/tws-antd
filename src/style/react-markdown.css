@@ -12,6 +12,9 @@
 .markdown-init li{
     list-style: none;
 }
+.markdown-init li p {
+    display: inline-block;
+}
 .markdown-init ol{
     counter-reset:li;
 }
@@ -124,7 +127,7 @@
     color: #706f6f;
 }
 .markdown-init p a{
-    font-size: 120%;
+    font-size: 110%;
     text-shadow: 0 0 1px #cacaca;
 }
 .react-markdown-editor {
