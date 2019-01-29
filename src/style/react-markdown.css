@@ -83,7 +83,7 @@
     line-height: 20px
 }
 
-.markdown-init p code {
+.markdown-init p code , .markdown-init li code {
     padding: 3px 5px;
     border: 1px solid #e9e9e9;
     border-radius: 2px;
