@@ -70,6 +70,7 @@ class App extends Component {
     return (
       <div>
         {/*<TwsMarkdownEditor value="aaa"></TwsMarkdownEditor>*/}
+        <TwsReactMarkdownEditor value={initialSource} onChange={this.getValue.bind(this)}/>
         <TwsProgressCard title="aaa" percent={10} onClick={console.log}/>
         <TwsBelongTask title="所属任务卡">aaaaaa</TwsBelongTask>
         <TwsLayout userName='zhang三' lang='en' logo={logo} onChange={console.log} logoutUrl={'jjjfdsjk'}
@@ -84,7 +85,7 @@ class App extends Component {
         <TwsEditAssignmentStatus status='已提交' disabled />
           <TwsShowAssignmentStatus/>
         <TwsReactMarkdownPreview source={initialSource}/>
-        <TwsReactMarkdownEditor value={initialSource} onChange={this.getValue.bind(this)}/>
+
       </div>
     )
   }

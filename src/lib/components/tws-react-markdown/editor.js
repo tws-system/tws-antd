@@ -6,7 +6,7 @@ import MarkdownGuide from './tools/markdown-guide'
 import MarkdownImageUpload from './tools/markdown-image-upload'
 import MarkdownFileUpload from './tools/markdown-file-upload'
 import '../../../style/react-markdown.css'
-
+import 'github-markdown-css/github-markdown.css'
 const {TextArea} = Input
 
 export default class MarkdownEditor extends React.Component {

@@ -120,6 +120,7 @@
   "dependencies": {
     "antd": "~3.9.0",
     "es6-promise": "^4.2.4",
+    "github-markdown-css": "^2.10.0",
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^3.2.1",
     "ncp": "^2.0.0",

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ReactMarkdown from 'react-markdown'
 import CodeBlock from './code-block'
 import '../../../style/react-markdown.css'
-
+import 'github-markdown-css/github-markdown.css'
 class TwsReactMarkdownPreview extends Component {
   render () {
     const markdownSrc = this.props.source || ''
