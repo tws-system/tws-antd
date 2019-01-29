@@ -10,7 +10,8 @@ class TwsReactMarkdownPreview extends Component {
     const isEscapeHtml = !videoTag
 
     return (
-      <ReactMarkdown className="markdown-init" source={this.props.source} escapeHtml={isEscapeHtml}
+      <ReactMarkdown className="markdown-body markdown-init "
+                     source={this.props.source} escapeHtml={isEscapeHtml}
                      renderers={{code: CodeBlock}}/>
     )
   }

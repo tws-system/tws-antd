@@ -85,7 +85,7 @@ export default class MarkdownEditor extends React.Component {
                 </Col>
                 <Col span={12}>
                     <div className="result-pane">
-                        <ReactMarkdown className="markdown-init" source={this.state.markdownSrc}
+                        <ReactMarkdown className=" markdown-body markdown-init" source={this.state.markdownSrc}
                                        escapeHtml={isEscapeHtml}
                                        renderers={{code: CodeBlock}}/>
                     </div>
