@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
-import {Col} from 'antd'
+import {Col, Divider} from 'antd'
 import PropTypes from 'prop-types'
 import {convertContent} from '../../contants/lang-util'
 class ShowStatusBox extends Component {
   render () {
     return (<div>
 
-        <Col span={12}>
+        <span>
             {convertContent('分数')}：{this.props.grade}
-        </Col>
-        <Col span={12}>
+        </span>
+        <Divider type='vertical'/>
+        <span>
             {convertContent('状态')}：{this.props.status}
-        </Col>
+        </span>
       </div>
     )
   }
