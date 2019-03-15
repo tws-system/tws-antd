@@ -8,6 +8,7 @@ import TwsEditAssignmentStatus from './components/tws-edit-assignment-status'
 import TwsReactMarkdownPreview from './components/tws-react-markdown/preview'
 import TwsReactMarkdownEditor from './components/tws-react-markdown/editor'
 import requestMiddleware from './middlewares/request-middleware'
+import TwsOrganizationSelect from './components/tws-organization/tws-organization-select-box'
 
 export {
   TwsMarkdownEditor,
@@ -19,5 +20,6 @@ export {
   TwsEditAssignmentStatus,
   TwsReactMarkdownPreview,
   TwsReactMarkdownEditor,
-  requestMiddleware
+  requestMiddleware,
+  TwsOrganizationSelect
 }
