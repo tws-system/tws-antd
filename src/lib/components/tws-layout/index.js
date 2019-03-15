@@ -44,7 +44,7 @@ class TwsLayout extends Component {
           </Row>
         </div>
         <Content style={{padding: '0 50px'}}>
-          {this.props.twsBreadcrumb}
+          {this.props.twsBreadcrumb }
           <Layout style={{padding: '24px 0', background: '#fff'}}>
             <Content style={{padding: '0 24px', minHeight: 280}}>
               {this.props.children}

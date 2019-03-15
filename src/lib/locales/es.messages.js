@@ -7,6 +7,7 @@ const lang = {
     '最新消息':'@Me',
     '个人中心':'Profile',
     '退出':'Logout',
+    '当前组织':'Organization'
 }
 
 export default lang
