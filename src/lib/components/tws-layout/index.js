@@ -38,7 +38,8 @@ class TwsLayout extends Component {
           </Col>
           <Col>
             <OrganizationSelectBox organizations={organizations}
-                                   user={{currentOrganizationId:1}}/>
+                                   user={{currentOrganizationId:1}}
+                                   updateUserCurrentOrganizationId={this.props.updateUserCurrentOrganizationId}/>
           </Col>
         </Row>
         <Content style={{padding: '0 30px'}}>
