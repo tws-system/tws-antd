@@ -62,7 +62,7 @@ class Notification extends Component {
                 arrowPointAtCenter
             >
                 <Badge count={notifications.length}>
-                    <Icon type="bell" style={{fontSize: '22px', color: '#FFFFFF'}}/>
+                    <Icon type="bell" style={{fontSize: '25px', color: '#FFFFFF'}}/>
                 </Badge>
             </Popover>)
     }

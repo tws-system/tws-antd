@@ -54,7 +54,7 @@ A component by [VaffelNinja](http://vaffel.ninja) / Espen Hovlandsdal
 </video>
     
 `
-const organizations = [{id:1,title:'test'}, {id:2,title:'test2'}]
+const organizations = [{id:1,title:'特别特币长的啊啊'}, {id:2,title:'test2'}]
 class App extends Component {
 
   getValue(value) {
@@ -81,18 +81,23 @@ class App extends Component {
       {id: 3, createTime: '2018-08-19', message: "助教 司鑫 关注了你 微信：MH12312 手机号：13802953789 QQ：263729374 赶快去联系他吧", url: ""}]
     return (
       <div>
+        <TwsLayout user={{currentOrganizationId:1,userName:'zhang三'}}
+                   lang='en'
+                   organizations={organizations}
+                   logo={logo} onChange={console.log} logoutUrl={'jjjfdsjk'}
+                   userCenterHomeUrl={'bbbbbbbb'}
+                   notifications={notifications}
+                   moreUrl={'http://localhost:3000/'}
+                   handleOnClick={this.handleOnClick.bind(this)}>
+          {'测试'}
+        </TwsLayout>
         <OrganizationSelectBox organizations={organizations}
                                user={{currentOrganizationId:1}}/>
         {/*<TwsMarkdownEditor value="aaa"></TwsMarkdownEditor>*/}
         <TwsReactMarkdownEditor value={initialSource} onChange={this.getValue.bind(this)}/>
         <TwsProgressCard title="aaa" percent={10} onClick={console.log}/>
         <TwsBelongTask title="所属任务卡">aaaaaa</TwsBelongTask>
-        <TwsLayout userName='zhang三' lang='en' logo={logo} onChange={console.log} logoutUrl={'jjjfdsjk'}
-                   userCenterHomeUrl={'bbbbbbbb'} notifications={notifications}
-                   moreUrl={'http://localhost:3000/'}
-                   handleOnClick={this.handleOnClick.bind(this)}>
-          {'测试'}
-        </TwsLayout>
+
         <TwsSection taskType="选修" topicTitle="topicsfjddddfasjkkkkkkkkdddddddddddddddddddddddddddl" taskTitle="tnvjvj"
                     color={'red'}/>
 

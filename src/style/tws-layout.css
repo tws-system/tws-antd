@@ -4,9 +4,9 @@
 }
 
 .App-header {
+  height: 90px;
   background: #595959;
-  padding: 10px 50px;
-  height: auto;
+  padding-left: 50px;
 }
 
 .logo {

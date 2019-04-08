@@ -1,8 +1,5 @@
-import React, { Component } from 'react'
-import { Select } from 'antd'
-import {convertContent} from "../../contants/lang-util";
-
-const Option = Select.Option
+import React, {Component} from 'react'
+import {Dropdown, Icon, Menu} from 'antd'
 
 export default class OrganizationSelectBox extends Component {
   onChangeOrganization (organizationId) {
@@ -12,26 +9,26 @@ export default class OrganizationSelectBox extends Component {
 
   render () {
     const {user={}, organizations=[]} = this.props
-    console.log(organizations)
+    const menu = (
+      <Menu onClick={evt => this.onChangeOrganization( evt.key)}>
+        {organizations.map(org=><Menu.Item key={org.id} >
+          {org.title}
+        </Menu.Item>)}
+      </Menu>
+    )
+
     return (
-      <div className='organization-site'>
+      <span>
         {organizations.length > 1
-          ? <span> {convertContent('当前组织')} ：
-            <Select
-              size='small'
-              className='organization-select'
-              value={user.currentOrganizationId}
-              onChange={this.onChangeOrganization.bind(this)}>
-              {organizations.map(organization => {
-                return <Option key={organization.id}
-                  value={organization.id}>
-                  {organization.title}
-                </Option>
-              })}
-            </Select>
-          </span>
+          ?
+          <Dropdown overlay={menu}>
+            <a style={{color:'white'}}  href='javascript:(0)'>
+              {organizations.find(org=>org.id===user.currentOrganizationId).title}
+               <Icon type='down' />
+            </a>
+          </Dropdown>
           : ''}
-      </div>
+          </span>
     )
   }
 }

@@ -9,12 +9,12 @@ class TwsUserInfo extends Component {
       <Menu>
         <Menu.Item>
           <a rel='noopener noreferrer' href={this.props.userCenterHomeUrl}>
-            <Icon type='user' className='margin-r-1' />{convertContent('个人中心')}
+            <Icon type="setting" className='margin-r-1' /> {convertContent('个人中心')}
           </a>
         </Menu.Item>
         <Menu.Item>
           <a rel='noopener noreferrer' href={this.props.logoutUrl}>
-            <Icon type='close' className='margin-r-1' />{convertContent('退出')}
+            <Icon type='logout' className='margin-r-1' /> {convertContent('退出')}
           </a>
         </Menu.Item>
       </Menu>
@@ -22,7 +22,7 @@ class TwsUserInfo extends Component {
 
     return (
       <Dropdown overlay={menu} placement='bottomRight'>
-        <Button style={{'float': 'right'}} className='margin-t-3'>{this.props.userName} <Icon type='down' /></Button>
+        <Button  icon="user">{this.props.userName}</Button>
       </Dropdown>
     )
   }
