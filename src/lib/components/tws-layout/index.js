@@ -38,14 +38,14 @@ class TwsLayout extends Component {
           </Col>
           <Col>
             <OrganizationSelectBox organizations={organizations}
-                                   user={{user}}
+                                   user={user}
                                    updateUserCurrentOrganizationId={this.props.updateUserCurrentOrganizationId}/>
           </Col>
         </Row>
         <Content style={{padding: '0 30px'}}>
           {this.props.twsBreadcrumb}
           <Layout style={{padding: '24px', background: '#fff'}}>
-            <Content style={{minHeight: 280}}>
+            <Content style={{minHeight: '500px'}}>
               {this.props.children}
             </Content>
           </Layout>

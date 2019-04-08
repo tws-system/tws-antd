@@ -16,14 +16,14 @@ export default class OrganizationSelectBox extends Component {
         </Menu.Item>)}
       </Menu>
     )
-
+    const organization = organizations.find(org=>org.id===user.currentOrganizationId) || {}
     return (
       <span>
         {organizations.length > 1
           ?
           <Dropdown overlay={menu}>
             <a style={{color:'white'}}  href='javascript:(0)'>
-              {organizations.find(org=>org.id===user.currentOrganizationId).title}
+              {organization.title}
                <Icon type='down' />
             </a>
           </Dropdown>
