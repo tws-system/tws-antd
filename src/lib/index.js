@@ -1,4 +1,3 @@
-import TwsMarkdownEditor from './components/tws-markdown-editor'
 import TwsProgressCard from './components/tws-progress-card'
 import TwsBelongTask from './components/tws-belong-task'
 import TwsLayout from './components/tws-layout'
@@ -11,7 +10,6 @@ import requestMiddleware from './middlewares/request-middleware'
 import TwsOrganizationSelect from './components/tws-organization/tws-organization-select-box'
 
 export {
-  TwsMarkdownEditor,
   TwsProgressCard,
   TwsBelongTask,
   TwsLayout,
