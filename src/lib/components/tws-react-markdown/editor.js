@@ -7,6 +7,7 @@ import MarkdownImageUpload from './tools/markdown-image-upload'
 import MarkdownFileUpload from './tools/markdown-file-upload'
 import '../../../style/react-markdown.css'
 import 'github-markdown-css/github-markdown.css'
+import {convertContent} from "../../contants/lang-util";
 const {TextArea} = Input
 const { TabPane } = Tabs
 
@@ -80,18 +81,35 @@ export default class MarkdownEditor extends React.Component {
                   </Col>
                 </Row>}
                 type="card">
-            <TabPane tab="编辑" key="edit">
+            <TabPane tab={convertContent("编辑")} key="edit">
               <TextArea id='markdown-textArea'
                         autosize={{ minRows: 8}}
                         value={this.state.markdownSrc}
                         onChange={(e) => this.handleMarkdownChange(e.target.value)}/>
             </TabPane>
-            <TabPane tab="预览" key="preview">
+            <TabPane tab={convertContent("预览")} key="preview">
               <div className="result-pane">
                 <ReactMarkdown className=" markdown-body markdown-init" source={this.state.markdownSrc}
                                escapeHtml={isEscapeHtml}
                                renderers={{code: CodeBlock}}/>
               </div>
+            </TabPane>
+            <TabPane tab={convertContent("实时")} key="realTime">
+              <Row className="react-markdown-editor">
+                <Col span={12}>
+                  <div className="editor-pane">
+                        <TextArea id='markdown-textArea' value={this.state.markdownSrc}
+                                  onChange={(e) => this.handleMarkdownChange(e.target.value)}/>
+                  </div>
+                </Col>
+                <Col span={12}>
+                  <div className="result-pane">
+                    <ReactMarkdown className=" markdown-body markdown-init" source={this.state.markdownSrc}
+                                   escapeHtml={isEscapeHtml}
+                                   renderers={{code: CodeBlock}}/>
+                  </div>
+                </Col>
+              </Row>
             </TabPane>
           </Tabs>
 
