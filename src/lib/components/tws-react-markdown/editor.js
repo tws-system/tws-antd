@@ -1,5 +1,5 @@
 import React from 'react'
-import {Col, Input, Row} from 'antd'
+import {Col, Input, Row, Tabs} from 'antd'
 import ReactMarkdown from 'react-markdown'
 import CodeBlock from './code-block'
 import MarkdownGuide from './tools/markdown-guide'
@@ -8,13 +8,15 @@ import MarkdownFileUpload from './tools/markdown-file-upload'
 import '../../../style/react-markdown.css'
 import 'github-markdown-css/github-markdown.css'
 const {TextArea} = Input
+const { TabPane } = Tabs
 
 export default class MarkdownEditor extends React.Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            markdownSrc: this.props.value || ''
+            markdownSrc: this.props.value || '',
+            tabKey: 'edit'
         }
     }
 
@@ -61,36 +63,38 @@ export default class MarkdownEditor extends React.Component {
         const isEscapeHtml = !videoTag
 
         return <div>
-            <Row className='react-markdown-toolbar'>
-                <Col className='react-markdown-toolbar__tool'>
-                    <MarkdownGuide/>
-                </Col>
-                <Col className='react-markdown-toolbar__tool'>
+          <Tabs onChange={tabKey => this.setState({tabKey})}
+                tabBarExtraContent={<Row className='react-markdown-toolbar'>
+                  <Col className='react-markdown-toolbar__tool'>
                     <MarkdownImageUpload
-                        {...this.props}
-                        uploadImageSuccess={this.uploadImageSuccess.bind(this)}/>
-                </Col>
-                <Col className='react-markdown-toolbar__tool'>
+                      {...this.props}
+                      uploadImageSuccess={this.uploadImageSuccess.bind(this)}/>
+                  </Col>
+                  <Col className='react-markdown-toolbar__tool'>
                     <MarkdownFileUpload
-                        {...this.props}
-                        uploadFileSuccess={this.uploadFileSuccess.bind(this)}/>
-                </Col>
-            </Row>
-            <Row className="react-markdown-editor">
-                <Col span={12}>
-                    <div className="editor-pane">
-                        <TextArea id='markdown-textArea' value={this.state.markdownSrc}
-                                  onChange={(e) => this.handleMarkdownChange(e.target.value)}/>
-                    </div>
-                </Col>
-                <Col span={12}>
-                    <div className="result-pane">
-                        <ReactMarkdown className=" markdown-body markdown-init" source={this.state.markdownSrc}
-                                       escapeHtml={isEscapeHtml}
-                                       renderers={{code: CodeBlock}}/>
-                    </div>
-                </Col>
-            </Row>
+                      {...this.props}
+                      uploadFileSuccess={this.uploadFileSuccess.bind(this)}/>
+                  </Col>
+                  <Col className='react-markdown-toolbar__tool'>
+                    <MarkdownGuide/>
+                  </Col>
+                </Row>}
+                type="card">
+            <TabPane tab="编辑" key="edit">
+              <TextArea id='markdown-textArea'
+                        autosize={{ minRows: 8}}
+                        value={this.state.markdownSrc}
+                        onChange={(e) => this.handleMarkdownChange(e.target.value)}/>
+            </TabPane>
+            <TabPane tab="预览" key="preview">
+              <div className="result-pane">
+                <ReactMarkdown className=" markdown-body markdown-init" source={this.state.markdownSrc}
+                               escapeHtml={isEscapeHtml}
+                               renderers={{code: CodeBlock}}/>
+              </div>
+            </TabPane>
+          </Tabs>
+
         </div>
     }
 }

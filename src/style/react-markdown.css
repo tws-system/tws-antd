@@ -100,7 +100,6 @@
 
 .react-markdown-toolbar {
     padding: 5px 0;
-    border: 1px solid #ccc;
     border-bottom: none;
 }
 
@@ -108,11 +107,10 @@
     margin-left: 15px;
     float: left;
 }
-
 .react-markdown-icon {
     cursor: pointer;
     font-size: 1.5rem;
-    color: #08c;
+    color: #586069;
     margin: 0 5px;
 }
 
@@ -131,4 +129,7 @@
     height: 325px;
     overflow: scroll;
     background-color: white;
+}
+.markdown-textArea{
+    padding: 5px;
 }
