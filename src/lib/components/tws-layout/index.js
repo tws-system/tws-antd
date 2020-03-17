@@ -51,7 +51,8 @@ class TwsLayout extends Component {
           </Layout>
         </Content>
         <Footer style={{textAlign: 'center'}}>
-          ThoughtWorks Learning Platform © {currentYear}
+          ThoughtWorks Learning Platform © {currentYear} &nbsp;|&nbsp;
+          <a style={{color: 'rgba(0,0,0,.65)'}} href='http://www.beian.miit.gov.cn'>陕ICP备13005347号-3</a>
           {this.props.languageButtons}
         </Footer>
       </Layout>
